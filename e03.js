@@ -1,11 +1,12 @@
-var mongo = require('mongodb').MongoClient
-var age = process.argv[2]
-var url = 'mongodb://localhost:27017/learnyoumongo'
+'use strict'
 
-mongo.connect(url, function(err, db) {
+const mongodb = require('mongodb').MongoClient
+const age = process.argv[2]
+const url = 'mongodb://localhost:27017/learnyoumongo'
+
+mongodb.connect(url, function(err, db) {
   if(err) throw err
-  var parrots  = db.collection('parrots')
-  parrots.find({
+  db.collection('parrots').find({
     age:{
       $gt: +age
     }

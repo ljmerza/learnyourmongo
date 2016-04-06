@@ -1,8 +1,9 @@
-var mongo = require('mongodb').MongoClient
+'use strict'
 
-var url = 'mongodb://localhost:27017/learnyoumongo'
+const mongodb = require('mongodb').MongoClient
+const url = 'mongodb://localhost:27017/learnyoumongo'
 
-mongo.connect(url, function(err, db) {
+mongodb.connect(url, function(err, db) {
   if(err) throw err
   db.collection('parrots').count({age:{$gt: +process.argv[2]}}, function(err, data){
       if(err) throw err

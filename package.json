@@ -1,0 +1,22 @@
+{
+  "name": "learnyourmongo",
+  "version": "1.0.0",
+  "description": "Node.js exercises from learnyourmongo repository",
+  "main": "e03.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljmerza/learnyourmongo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ljmerza/learnyourmongo/issues"
+  },
+  "homepage": "https://github.com/ljmerza/learnyourmongo#readme",
+  "dependencies": {
+    "mongodb": "^2.1.15"
+  }
+}

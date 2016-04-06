@@ -1,13 +1,13 @@
-var mongo = require('mongodb').MongoClient
+'use strict'
 
-var url = 'mongodb://localhost:27017/learnyoumongo'
-
-var doc = {
+const mongodb = require('mongodb').MongoClient
+const url = 'mongodb://localhost:27017/learnyoumongo'
+const doc = {
   firstName: process.argv[2]
 , lastName: process.argv[3]
 }
 
-mongo.connect(url, function(err, db) {
+mongodb.connect(url, function(err, db) {
   if(err) throw err
   db.collection('docs').insert(doc,function(err, data){
       if(err) throw err

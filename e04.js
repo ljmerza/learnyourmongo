@@ -1,12 +1,13 @@
-var mongo = require('mongodb').MongoClient
-var age = process.argv[2]
-var url = 'mongodb://localhost:27017/learnyoumongo'
+'use strict'
 
-mongo.connect(url, function(err, db) {
+const mongodb = require('mongodb').MongoClient
+const age = process.argv[2]
+const url = 'mongodb://localhost:27017/learnyoumongo'
+
+mongodb.connect(url, function(err, db) {
   if(err) throw err
-  var parrots  = db.collection('parrots')
-  parrots.find({
-      // get age  greater than first argeument
+  db.collection('parrots').find({
+      // get agegreater than first argeument
       // only return name and age data
       age:{$gt: +age}}, {name:1, age:1, _id:0}
     ).toArray(function(err,docs){
